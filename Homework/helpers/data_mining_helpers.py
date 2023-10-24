@@ -37,14 +37,11 @@ def tokenize_text(text, remove_stopwords=False):
             tokens.append(word)
     return tokens
 
-import re
-
 def cleaning(text, stop):
     """
     Tokenize text using the nltk library
     """
     tokens = []
-    text = re.sub("[^0-9A-Za-z]",' ',str(text).lower()).strip()
     for d in nltk.sent_tokenize(text, language='english'): 
         for word in nltk.word_tokenize(d, language='english'):
             if word not in stop :
